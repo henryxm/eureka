@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: Eureka-Server
+  security:
+    user:
+      name: admin
+      password: admin
+
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: mymac.minclouds.cn
+    healthCheckUrlPath: /health
+    preferIpAddress: false
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    region: default
+    availabilityZones:
+      default: chendu,shenzhen
+    useDnsForFetchingServiceUrls: true
+    serviceUrl:
+      defaultZone: http://mymac.minclouds.cn:8761/eureka/
+    eurekaServerDNSName: eureka.autumn.org.cn
+    eurekaServerURLContext: eureka
+    eurekaServerPort: 8761
+
+    registerWithEureka: true
+    fetchRegistry: true
