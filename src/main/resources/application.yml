@@ -1,17 +1,19 @@
 spring:
   application:
     name: mymac
-#  security:
-#    user:
-#      name: admin
-#      password: admin
+  security:
+    user:
+      name: admin
+      password: admin
+    basic:
+      enabled: true
 
 server:
   port: 8761
 
 eureka:
   instance:
-    hostname: mymac
+    hostname: mymac.minclouds.cn
     healthCheckUrlPath: /health
     preferIpAddress: false
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
@@ -21,7 +23,7 @@ eureka:
       default: chendu
     useDnsForFetchingServiceUrls: true
     serviceUrl:
-      defaultZone: http://mymac.minclouds.cn:8761/eureka
+      defaultZone: http://admin:admin@mymac.minclouds.cn:8761/eureka
     eurekaServerDNSName: eureka.autumn.org.cn
     eurekaServerURLContext: eureka
     eurekaServerPort: 8761
