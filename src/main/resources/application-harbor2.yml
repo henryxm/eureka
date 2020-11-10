@@ -9,11 +9,11 @@ spring:
       enabled: true
 
 server:
-  port: 8761
+  port: 670
 
 eureka:
   instance:
-    hostname: mymac.minclouds.cn
+    hostname: harbor2.iparkcar.cn
     healthCheckUrlPath: /health
     preferIpAddress: false
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
@@ -22,9 +22,9 @@ eureka:
     availabilityZones:
       default: chendu
     useDnsForFetchingServiceUrls: true
-    eurekaServerDNSName: eureka.autumn.org.cn
+    eurekaServerDNSName: eureka.iparkcar.cn
     eurekaServerURLContext: eureka
-    eurekaServerPort: 8761
+    eurekaServerPort: 668
     preferSameZoneEureka: true
 
     registerWithEureka: true

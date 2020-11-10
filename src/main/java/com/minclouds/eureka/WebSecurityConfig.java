@@ -22,5 +22,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
          * http.csrf().disable();//完全禁止 CSRF 防护
          */
         http.csrf().disable();
+        super.configure(http);
     }
 }
